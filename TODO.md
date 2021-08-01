@@ -1,2 +1,3 @@
 - Docker Cleanup
 - AWS Deployment
+- Lambda GEOS
