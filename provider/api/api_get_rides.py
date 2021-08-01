@@ -6,7 +6,7 @@ from rest_framework.status import HTTP_400_BAD_REQUEST
 from shapely.geometry import Point, Polygon
 
 from provider.models import ProviderServiceArea
-from provider.api.serializers import ProviderServiceAreaSerializer
+from provider.api.serializers import ProviderServiceAreaMiniSerializer
 
 
 class RidesAPIView(APIView):
@@ -30,5 +30,5 @@ class RidesAPIView(APIView):
             polygon = Polygon(service_area.polygon["coordinates"])
             if point.within(polygon):
                 rides.append(service_area)
-        rides_data = ProviderServiceAreaSerializer(rides, many=True).data
+        rides_data = ProviderServiceAreaMiniSerializer(rides, many=True).data
         return Response(rides_data)

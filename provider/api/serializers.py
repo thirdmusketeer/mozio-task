@@ -17,8 +17,15 @@ class ProviderMiniSerializer(serializers.ModelSerializer):
 
 
 class ProviderServiceAreaSerializer(serializers.ModelSerializer):
-    provider = ProviderMiniSerializer(read_only=True)
 
     class Meta:
         model = ProviderServiceArea
         fields = ("name", "provider", "price", "polygon")
+
+
+class ProviderServiceAreaMiniSerializer(serializers.ModelSerializer):
+    provider = ProviderMiniSerializer(read_only=True)
+
+    class Meta:
+        model = ProviderServiceArea
+        fields = ("name", "provider", "price")
