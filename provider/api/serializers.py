@@ -10,8 +10,14 @@ class ProviderSerializer(serializers.ModelSerializer):
         fields = ("name", "email", "phone_number", "language", "currency")
 
 
+class ProviderMiniSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Provider
+        fields = ("name", "currency")
+
+
 class ProviderServiceAreaSerializer(serializers.ModelSerializer):
-    # provider = ProviderSerializer()
+    provider = ProviderMiniSerializer(read_only=True)
 
     class Meta:
         model = ProviderServiceArea
