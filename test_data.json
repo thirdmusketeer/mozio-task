@@ -1,0 +1,18 @@
+
+[
+ {
+    "name":"Nathavalasa",
+    "coordinates": [
+      83.52270126342773,
+      18.06288351021169
+    ]
+  },
+  {
+    "name":"Pydibhimavaram",
+    "test_url": "http://localhost:8000/api/rides/?lat=83.62784385681152&lng=18.14519927404462",
+    "coordinates": [
+      83.62784385681152,
+      18.14519927404462
+    ]
+  }
+]
